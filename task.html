@@ -1,0 +1,102 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1> check the numbers are consecutive
+
+        
+       
+        let count =0;
+        let arr = "567"
+       
+        for(i=0;i<=arr.length-1;i++){
+            if((arr[i]-arr[i-1])==1){
+               
+                count++;
+            }
+            if(count==arr.length-1){
+                res =true;
+            }else{
+                res =false;
+            }
+
+        }; console.log(res);
+
+        //==========================
+
+         const arr2 = "123456";
+         const arr3 = "1235";
+         const arr4 = "567";
+         const arr5 ="568";
+          
+        let consecutive = (arr1)=>{
+            for(i=0 ; i<=arr1.length-1; i++){
+                res='';
+                if((arr1[i]-arr1[i-1])==1){
+                    res = true;
+                }else{
+                    res =false;
+                }
+            } return res;
+        };
+        console.log(consecutive(arr2));
+        console.log(consecutive(arr3));
+        console.log(consecutive(arr4));
+        console.log(consecutive(arr5));
+        
+    // 2> remove special characters :
+
+    let str ="a#b#c";
+    let str2 ="A!b#c$"
+   
+    const remove = (input)=>{
+        let res1 ='';
+        for(i=0 ; i<=str.length-1 ;i++){
+            
+        if(i%2==0){
+          res1 += input[i];
+        };
+    };return res1;
+    };
+    console.log(remove(str));
+    
+    console.log(remove(str2.toLowerCase()));
+
+    // 3> caluculate the total:
+
+    const obj1 ={
+        a:1,
+        b:{
+            c:-2,
+            d:4,
+            },
+        e:3
+    };
+
+     res =[];
+
+        res.push(obj1.a,obj1.e,obj1.b.c,obj1.b.d);
+        const total = res.reduce((acc,mov)=>acc + mov);
+        console.log(total);
+
+    // 4> Add positive numbers only
+
+    const arr6 =[3,-1,5];
+
+    const sum=arr6.filter(mov=>mov>0).reduce((acc,mov)=>acc + mov,0);
+    console.log(sum);
+
+    let sum1=(input)=>{
+        console.log(input.filter(mov=>mov>0).reduce((acc,mov)=>acc + mov,0));
+    }
+
+    const arr7=[-1,2,3,-4];
+    sum1(arr7);
+    </script>
+</body>
+</html>
